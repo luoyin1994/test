@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<div>4546878798798</div>
+<script>
+    XMLHttpRequest         = XMLHttpRequest || ActiveXObject('Microsoft.XMLHTTP');
+    xhr                    = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+            else {
+                console.log('There was a problem with the request.');
+            }
+        }
+    };
+    xhr.open('POST', 'http://127.0.0.1:3000/post', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('');
+</script>
+</body>
+</html>
